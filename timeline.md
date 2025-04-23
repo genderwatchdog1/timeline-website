@@ -66,15 +66,15 @@
   동국 디지털컨텐츠미디어대학원 전체 교수진을 포함한 후속 이메일, 응답 없음
 
 - **Apr 5, 2025**: *Gender Watchdog Blog Created*  
-  [Dongguk Exposed: A Decade of Sexual Harassment Negligence](https://genderwatchdog.bearblog.dev/inside-dongguk-a-decade-of-gender-inequality-and-institutional-failure-20162025/)
+  [Dongguk Exposed: A Decade of Sexual Violence Negligence](https://genderwatchdog.bearblog.dev/inside-dongguk-a-decade-of-gender-inequality-and-institutional-failure-20162025/)
   
-  [曝光东国大学：十年性骚扰渎职](https://genderwatchdog.bearblog.dev/20162025/)
+  [曝光东国大学：十年性暴力渎职](https://genderwatchdog.bearblog.dev/20162025/)
   
-  [揭露東國大學：十年性騷擾失職史](https://genderwatchdog.bearblog.dev/20162025-new-new-new-new-new-new/)
+  [揭露東國大學：十年性暴力失職史](https://genderwatchdog.bearblog.dev/20162025-new-new-new-new-new-new/)
   
-  [東国大学の実態: 10年間の性的ハラスメント放置問題](https://genderwatchdog.bearblog.dev/20162025-new-new-new/)
+  [東国大学の実態: 10年間の性暴力放置問題](https://genderwatchdog.bearblog.dev/20162025-new-new-new/)
   
-  [동국대학교 실상 공개: 10년간의 성희롱 방치](https://genderwatchdog.bearblog.dev/20162025-new/)
+  [동국대학교 실상 공개: 10년간의 성폭력 방치](https://genderwatchdog.bearblog.dev/20162025-new/)
 
 - **Apr 5-6, 2025**: *Email escalation sent to Dongguk University mentioning Title IX risks. Dongguk responded dismissively: "For what purpose did you send the e-mail? Is it for suggestion or reporting?"*  
   
