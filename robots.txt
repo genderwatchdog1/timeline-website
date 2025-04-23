@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://genderwatchdog1.github.io/timeline-website/sitemap.xml 
