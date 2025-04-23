@@ -22,6 +22,10 @@ Visit the [Gender Watchdog Timeline Website](https://genderwatchdog1.github.io/t
 4. Once downloaded, extract the ZIP file to a folder on your computer
 5. Open the folder and double-click on "index.html" to view the content in your web browser
 
+If you prefer a version without analytics tracking:
+1. Switch to the "no-analytics" branch by selecting it from the branch dropdown menu (left of the Code button)
+2. Then follow steps 2-5 above to download and use the analytics-free version
+
 ### Option 3: Clone with Git
 If you're familiar with Git:
 1. Open your terminal or command prompt
@@ -29,6 +33,10 @@ If you're familiar with Git:
 3. Run: `git clone https://github.com/genderwatchdog1/timeline-website.git`
 4. Navigate into the cloned directory: `cd timeline-website`
 5. Open "index.html" in your web browser to view the content
+
+For the analytics-free version:
+1. After cloning, switch to the no-analytics branch: `git checkout no-analytics`
+2. Then open "index.html" in your web browser
 
 ## Repository Contents
 
