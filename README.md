@@ -1,5 +1,15 @@
 # Dongguk Exposed: Sexual Violence & Institutional Negligence
 
+## License
+
+This project is released under the [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). This means:
+
+- You are free to use, share, modify and distribute this work for any purpose, including commercial use
+- No attribution is required
+- All content, code, and materials in this repository may be used without restrictions
+
+We believe these important issues should be freely accessible and shareable without limitation.
+
 ## How to Access This Repository
 
 ### Option 1: View Online (Easiest Method)
