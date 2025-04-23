@@ -154,6 +154,6 @@ Creating safe educational environments in arts fields requires addressing the un
 - [Download full report (PDF)](https://drive.proton.me/urls/BAPF2DA400#4RGLR08iLFAJ)
 - [Archived Faculty Directory - Dongguk University](https://web.archive.org/web/20250413005624/https://www.dongguk.edu/eng/dandae/122#)
 - [Gender Watchdog - Structural Risk Report](https://genderwatchdog.bearblog.dev/between-ethics-and-exploitation-gender-risk-in-koreas-buddhist-affiliated-film-program/)
-- [Fictional Partnerships with North American Universities](https://genderwatchdog.bearblog.dev/fictional-partnerships-dongguk-university-lists-school-that-denies-ties/)
+- [Fictional Partnerships with North American Universities](https://genderwatchdog.bearblog.dev/title-ix-and-fake-partnerships-dongguk-university-under-global-review/)
 - [Screenshots of Responses](https://drive.proton.me/urls/95J0T3K37R#RBCO657BAC6a)
 - Original research: "Current Status of Sexual Violence Against University Students in the Culture and Arts after the Me Too Movement and Policy Issues" (2020) by Mijeong Lee, Deuk-kyoung Yoon, Heasang Jeon, Sooyeon Jung, Sung-Mi Lee, Korean Women's Development Institute
