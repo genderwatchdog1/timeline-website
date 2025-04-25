@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Get all timeline events
   const timelineEvents = document.querySelectorAll('.timeline-event');
   const tooltips = document.querySelectorAll('.timeline-tooltip');
-  
+
   // Get current language from HTML lang attribute
   const currentLang = document.documentElement.lang;
   
