@@ -4,6 +4,29 @@ document.addEventListener('DOMContentLoaded', function() {
   const timelineEvents = document.querySelectorAll('.timeline-event');
   const tooltips = document.querySelectorAll('.timeline-tooltip');
 
+  // Function to adjust tooltip position based on viewport
+  function adjustTooltipPosition() {
+    tooltips.forEach(tooltip => {
+      // Position tooltips close to the timeline events for better usability
+      tooltip.style.top = '90%';
+      tooltip.style.bottom = 'auto';
+      
+      // Set correct arrow position
+      const arrow = tooltip.querySelector('.timeline-tooltip::after');
+      if (arrow) {
+        arrow.style.top = 'auto';
+        arrow.style.bottom = '100%';
+        arrow.style.borderColor = 'transparent transparent var(--tooltip-bg) transparent';
+      }
+    });
+  }
+
+  // Adjust all tooltips after layout is complete
+  setTimeout(adjustTooltipPosition, 500);
+
+  // Add resize listener for responsive adjustments
+  window.addEventListener('resize', adjustTooltipPosition);
+  
   // Add click event listener to timeline events
   timelineEvents.forEach(event => {
     // Handle clicking on an event (opens the link)
@@ -19,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add event listeners for tooltips
     const tooltip = event.querySelector('.timeline-tooltip');
     if (tooltip) {
-      // Needed for touch devices
+      // For touch devices
       event.addEventListener('touchstart', function(e) {
         e.preventDefault();
         
@@ -39,6 +62,12 @@ document.addEventListener('DOMContentLoaded', function() {
           tooltip.style.visibility = 'visible';
           tooltip.style.opacity = '1';
           tooltip.style.transform = 'translateX(-50%) translateY(0)';
+          
+          // Make sure this event is above others
+          event.style.zIndex = '50';
+          
+          // Re-position tooltips for mobile view
+          adjustTooltipPosition();
         }
       });
       
@@ -49,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Language switcher setup - can be expanded later
+  // Language switcher functionality
   const languageLinks = document.querySelectorAll('.language-link');
   languageLinks.forEach(link => {
     link.addEventListener('click', function(e) {
@@ -60,4 +89,15 @@ document.addEventListener('DOMContentLoaded', function() {
       this.classList.add('active');
     });
   });
+  
+  // Bootstrap-specific initialization
+  try {
+    // Initialize any Bootstrap tooltips (if used)
+    var bootstrapTooltips = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    bootstrapTooltips.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  } catch (e) {
+    console.log('Bootstrap tooltips not initialized');
+  }
 });

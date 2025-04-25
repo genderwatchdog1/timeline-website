@@ -14,9 +14,11 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  height: 100%;
 }
 
 body {
@@ -24,16 +26,16 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  flex: 1;
+/* Main container for all content */
+.container-fluid {
+  flex: 1 0 auto; /* Allow the container to grow but not shrink */
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -55,7 +57,7 @@ h1 {
   position: relative;
   padding: 30px 0 20px;
   overflow: visible;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .timeline-track {
@@ -82,6 +84,7 @@ h1 {
   flex: 1 1 200px;
   min-width: 120px;
   margin-bottom: 30px;
+  z-index: 1;
 }
 
 .timeline-date {
@@ -97,6 +100,7 @@ h1 {
   white-space: nowrap;
   transform: translateX(-50%);
   left: 50%;
+  z-index: 1;
 }
 
 .timeline-dot {
@@ -140,7 +144,7 @@ h1 {
 .timeline-tooltip {
   visibility: hidden;
   position: absolute;
-  bottom: 150%;
+  top: 90%;
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--tooltip-bg);
@@ -148,11 +152,25 @@ h1 {
   padding: 15px;
   border-radius: 5px;
   width: 320px;
+  max-width: 90vw;
   font-size: 0.9rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   z-index: 100;
   opacity: 0;
   transition: opacity 0.3s, transform 0.3s, visibility 0s linear 0.3s;
+  pointer-events: none;
+}
+
+/* Set position for all tooltips to appear BELOW the timeline event */
+.timeline-event .timeline-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -8px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent var(--tooltip-bg) transparent;
 }
 
 /* Create a larger area including the tooltip and padding to allow mouse movement */
@@ -161,19 +179,8 @@ h1 {
   position: absolute;
   width: 100%;
   height: 30px; /* Create extra space for mouse movement */
-  bottom: -30px;
+  top: -30px;
   left: 0;
-}
-
-.timeline-tooltip::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -8px;
-  border-width: 8px;
-  border-style: solid;
-  border-color: var(--tooltip-bg) transparent transparent transparent;
 }
 
 .timeline-tooltip a {
@@ -206,15 +213,17 @@ h1 {
 .timeline-event:hover .timeline-content {
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 10;
 }
 
 /* Show tooltip and keep it visible when hovering over either the event or the tooltip */
-.timeline-event:hover .timeline-tooltip,
-.timeline-tooltip:hover {
+.timeline-event:hover .timeline-tooltip {
   visibility: visible;
   opacity: 1;
   transform: translateX(-50%) translateY(0);
   transition-delay: 0s;
+  pointer-events: auto;
 }
 
 .timeline-navigation {
@@ -259,86 +268,35 @@ h1 {
 
 .language-link:hover {
   background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
 }
 
 .language-link.active {
   background-color: var(--primary-color);
   font-weight: bold;
+  color: white;
+  text-decoration: none;
 }
 
-.footer-spacer {
-  height: 80px;
-  width: 100%;
-  clear: both;
-  margin-top: 50px;
-}
-
-.credits {
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  font-size: 0.8rem;
-  color: #777;
-  width: 100%;
-  padding: 20px 0;
-  clear: both;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .timeline-container {
-    padding: 30px 0 150px;
-  }
-  
-  .timeline-tooltip {
-    width: 260px;
-  }
-  
-  .timeline-event {
-    flex: 1 1 150px;
-    margin-bottom: 40px;
-  }
-  
-  .footer-spacer {
-    height: 120px;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.8rem;
-  }
-  
-  .subtitle {
-    font-size: 0.9rem;
-  }
-  
-  .timeline-event {
-    flex: 1 1 120px;
-  }
-  
-  .timeline-tooltip {
-    width: 220px;
-  }
-}
-
-/* Footer styles */
+/* Footer styles using flexbox for proper positioning */
 .site-footer {
+  flex-shrink: 0; /* Prevent footer from shrinking */
   width: 100%;
   padding: 15px 0;
-  margin-top: 0;
   background-color: var(--background-color);
+  text-align: center;
   border-top: 1px solid #eee;
-  position: relative;
-  bottom: 0;
+  margin-top: 40px; /* Add top margin to separate from content */
 }
 
 .credits {
   text-align: center;
   font-size: 0.8rem;
   color: #777;
-  width: 100%;
-  padding: 0;
+}
+
+.credits p {
   margin: 0;
 }
 
@@ -349,4 +307,73 @@ h1 {
 
 .credits a:hover {
   text-decoration: underline;
+}
+
+/* Responsive adjustments - now using Bootstrap breakpoints */
+@media (max-width: 991.98px) {
+  .timeline-container {
+    padding: 20px 0;
+  }
+  
+  .timeline-tooltip {
+    width: 280px;
+    top: 100%;
+  }
+  
+  .timeline-event {
+    flex: 1 1 150px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .site-footer {
+    padding: 15px 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  h1 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .timeline-event {
+    flex: 1 1 120px;
+    min-width: 100px;
+  }
+  
+  .timeline-tooltip {
+    width: 250px;
+    top: 100%;
+  }
+  
+  .timeline-track {
+    margin: 60px 0 40px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .timeline-event {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+  
+  .timeline {
+    gap: 10px;
+  }
+  
+  .timeline-date {
+    font-size: 0.8rem;
+  }
 }
