@@ -11,7 +11,18 @@
 
   [신게이트 사건](https://genderwatchdog.bearblog.dev/shingate-how-dongguk-university-leveraged-us-law-then-ignored-its-values/)
 
-- **2016**: *Professor Replacement Policy*  
+- **Feb 2016**: *Media Communication Professor Sexual Assault Case*  
+  [Read more](https://genderwatchdog.bearblog.dev/2016-sexual-assault-case-media-communication-professor-at-dongguk-university/)
+  
+  [媒体传播学教授性侵事件](https://genderwatchdog.bearblog.dev/2016-new-new-new/)
+  
+  [媒體傳播學教授性侵事件](https://genderwatchdog.bearblog.dev/2016-new-new-new-new-new-new/)
+  
+  [メディア・コミュニケーション教授の性暴力事件](https://genderwatchdog.bearblog.dev/2016/)
+  
+  [미디어커뮤니케이션 교수 성폭력 사건](https://genderwatchdog.bearblog.dev/2016-new/)
+
+- **Aug 2016**: *Professor Replacement Policy*  
   [Read more](https://genderwatchdog.bearblog.dev/inside-dongguk-a-decade-of-gender-inequality-and-institutional-failure-20162025/#1-2016-professor-replacement-policy)
   
   [教授更换政策](https://genderwatchdog.bearblog.dev/20162025/) (滚动至 "一、2016年：教授更换政策")
@@ -86,13 +97,24 @@
   
   타이틀 IX 위험성을 언급한 이메일 에스컬레이션을 동국대학교에 발송. 동국대학교의 무시하는 답변: "어떤 목적으로 이메일을 보내셨나요? 제안인가요, 아니면 신고인가요?"
 
-- **Apr 6-22, 2025**: *University refuses to engage since April 5-6 emails*  
+- **Apr 8, 2025**: *Partner Universities Respond*  
+  [Read more](https://genderwatchdog.bearblog.dev/title-ix-and-fake-partnerships-dongguk-university-under-global-review/)
   
-  自4月5-6日电子邮件以来，大学拒绝接触
+  [合作大学回应](https://genderwatchdog.bearblog.dev/title-ix-and-fake-partnerships-dongguk-university-under-global-review-zh-hans/)
   
-  自4月5-6日電子郵件以來，大學拒絕接觸
+  [合作大學回應](https://genderwatchdog.bearblog.dev/title-ix-and-fake-partnerships-dongguk-university-under-global-review-zh-hant/)
   
-  4月5-6日のメール以降、大学は関与を拒否
+  [提携大学からの回答](https://genderwatchdog.bearblog.dev/title-ix-and-fake-partnerships-dongguk-university-under-global-review-ja/)
   
-  4월 5-6일 이메일 이후 대학은 소통 거부
+  [협력 대학들의 응답](https://genderwatchdog.bearblog.dev/title-ix-and-fake-partnerships-university-under-global-review-ko/)
+
+- **Since April 6, 2025**: *University refuses to engage since April 5-6 emails*  
+  
+  大学自4月5-6日电子邮件以来拒绝接触
+  
+  大學自4月5-6日電子郵件以來拒絕接觸
+  
+  大学は4月5-6日のメール以降、関与を拒否
+  
+  대학은 4월 5-6일 이메일 이후 소통 거부
 
