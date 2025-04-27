@@ -66,7 +66,9 @@ These responses confirm that some schools currently listed by Dongguk have no ac
 ## Timeline of Events
 
 - **2008:** Shingate Scandal - Major scandal involving institutional misrepresentation
-- **2016:** Professor Replacement Policy introduced, allowing students to switch professors in abuse cases
+- **November 2015:** Media Communication Professor at Dongguk University sexually assaults student
+- **February 2016:** Media Communication Professor sexual assault case reported to the university
+- **August 2016:** Professor Replacement Policy introduced, allowing students to switch professors in abuse cases
 - **2018:** Female Student Council Abolished during the height of the MeToo movement
 - **2020:** KWDI Report published on sexual violence in arts education after MeToo
 - **March 8-9, 2025:** Initial email outreach to Dongguk University, no response
@@ -167,3 +169,30 @@ Creating safe educational environments in arts fields requires addressing the un
 - [Fictional Partnerships with North American Universities](https://genderwatchdog.bearblog.dev/title-ix-and-fake-partnerships-dongguk-university-under-global-review/)
 - [Screenshots of Responses](https://drive.proton.me/urls/95J0T3K37R#RBCO657BAC6a)
 - Original research: "Current Status of Sexual Violence Against University Students in the Culture and Arts after the Me Too Movement and Policy Issues" (2020) by Mijeong Lee, Deuk-kyoung Yoon, Heasang Jeon, Sooyeon Jung, Sung-Mi Lee, Korean Women's Development Institute
+
+## Repository Images
+
+### Arts Education Charts
+The `imgs` folder contains visual data from the 2020 KWDI report on sexual violence in arts education, organized in multiple language subfolders:
+
+- `arts_education_charts_en`: English versions of the charts
+- `arts_education_charts_ja`: Japanese versions
+- `arts_education_charts_ko`: Korean versions
+- `arts_education_charts_zh-CN`: Simplified Chinese versions
+- `arts_education_charts_zh-TW`: Traditional Chinese versions
+
+Each subfolder contains the following charts:
+- `female_vulnerability.png`: Factors contributing to female students' vulnerability
+- `harassment_by_gender.png`: Sexual harassment experiences by gender
+- `harassment_locations.png`: Common locations where sexual harassment occurs
+- `structural_factors.png`: Structural factors enabling abuse in arts education
+- `student_demands.png`: Student demands for institutional change
+
+These images are used in the timeline to highlight key events, including the February 2016 and August 2016 incidents at Dongguk University.
+
+### QR Codes
+The `qr-codes` folder contains shareable QR codes that connect to:
+- The Gender Watchdog YouTube channel
+- The timeline website deployed on GitHub Pages (this repository)
+
+These QR codes can be printed or shared digitally to increase accessibility and awareness of these resources.

@@ -11,7 +11,7 @@
 
   [신게이트 사건](https://genderwatchdog.bearblog.dev/shingate-how-dongguk-university-leveraged-us-law-then-ignored-its-values/)
 
-- **Feb 2016**: *Media Communication Professor Sexual Assault Case*  
+- **Nov 2015**: *Sexual Assault by Media Communication Professor*  
   [Read more](https://genderwatchdog.bearblog.dev/2016-sexual-assault-case-media-communication-professor-at-dongguk-university/)
   
   [媒体传播学教授性侵事件](https://genderwatchdog.bearblog.dev/2016-new-new-new/)
@@ -21,6 +21,17 @@
   [メディア・コミュニケーション教授の性暴力事件](https://genderwatchdog.bearblog.dev/2016/)
   
   [미디어커뮤니케이션 교수 성폭력 사건](https://genderwatchdog.bearblog.dev/2016-new/)
+
+- **Feb 2016**: *Media Communication Professor Sexual Assault Case Reported to University*  
+  [Read more](https://genderwatchdog.bearblog.dev/2016-sexual-assault-case-media-communication-professor-at-dongguk-university/)
+  
+  [媒体传播学教授性侵事件通知大学](https://genderwatchdog.bearblog.dev/2016-new-new-new/)
+  
+  [媒體傳播學教授性侵事件通知大學](https://genderwatchdog.bearblog.dev/2016-new-new-new-new-new-new/)
+  
+  [メディア・コミュニケーション教授の性暴力事件が大学に通報](https://genderwatchdog.bearblog.dev/2016/)
+  
+  [미디어커뮤니케이션 교수 성폭력 사건 대학에 통보](https://genderwatchdog.bearblog.dev/2016-new/)
 
 - **Aug 2016**: *Professor Replacement Policy*  
   [Read more](https://genderwatchdog.bearblog.dev/inside-dongguk-a-decade-of-gender-inequality-and-institutional-failure-20162025/#1-2016-professor-replacement-policy)
