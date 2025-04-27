@@ -38,14 +38,29 @@ This repository documents research on sexual violence in arts education with a f
 
 # Title IX Risk Advisory: Dongguk University Sexual Harassment Exposure
 
-## Institutional Risk Factors at Dongguk University:
+Institutional Risk Factors at Dongguk University:
 
-- No visible, independent reporting system for sexual misconduct
-- Zero full-time female faculty in the graduate film program
-- Abolition of the Women's Student Council during the height of Korea's MeToo movement (2018)
-- Shared campus space with commercial film entities (e.g., Sidus FNH), blurring lines between academic authority and industry power dynamics
+  * No visible, independent reporting system for sexual violence and sexual assault
+  * Zero full-time female faculty in the graduate film program
+  * Abolition of the Women's Student Council during the height of Korea's MeToo movement (2018)
+  * Shared campus space with commercial film entities (e.g., Sidus FNH), blurring lines between academic authority and industry power dynamics, creating additional sexual violence risks
+  * Documented pattern of institutional negligence in responding to sexual assault cases:
+    * Took no action for 6 months after being notified in February 2016 about a professor's sexual assault of a student
+    * Only implemented a token "professor replacement policy" in August 2016, 9 months after the assault occurred in November 2015.
+    * Failed to take disciplinary action against the professor until formal prosecution occurred in September 2016
+  * History of prioritizing institutional reputation over student safety through delayed responses and minimal interventions
+  * Fundamentally flawed reporting mechanisms:
+    * In the 2015 sexual assault case, the victim reported to police rather than university channels, revealing a profound lack of trust in institutional protections
+    * The three-month gap between the November 2015 assault and February 2016 university notification demonstrates how institutional barriers prevent timely reporting and intervention
+    * Korea's strict hierarchical academic culture creates overwhelming pressure for students to remain silent about faculty misconduct
 
-These factors combine to create a statistically high-risk environment for gender-based harm, particularly in a country where — according to a 2021 study by the Korean Women's Development Institute (KWDI) — arts graduate programs are among the highest-risk environments for sexual violence by faculty.
+These structural barriers to reporting mirror findings from the KWDI's research, which identifies how Korea's Confucian academic tradition creates multiple layers of silencing:
+1. Power asymmetry between professors and students is extreme, with professors controlling not only academic outcomes but future career prospects
+2. Cultural emphasis on "saving face" prioritizes institutional reputation over victim protection
+3. Victims face severe social stigmatization and potential academic retaliation if they report through internal channels
+4. The absence of female faculty or student advocacy groups removes crucial support systems that might otherwise facilitate safe reporting
+
+These factors combine to create a statistically high-risk environment for sexual violence, particularly in a country where — according to a 2021 study by the Korean Women's Development Institute (KWDI) — arts graduate programs are among the highest-risk environments for sexual violence and sexual abuse by faculty.
 
 ## Confirmed Cases of Institutional Misrepresentation
 
