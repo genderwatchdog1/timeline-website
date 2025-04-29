@@ -104,7 +104,7 @@ These responses confirm that some schools currently listed by Dongguk have no ac
 
 The 2018 Me Too movement in South Korea revealed alarming levels of sexual violence in arts education. This comprehensive study by the Korean Women's Development Institute examines the unique characteristics of sexual harassment in conservatories and art schools, revealing how the apprenticeship model and hierarchical structures create environments where abuse thrives.
 
-<img src="https://i.ibb.co/Jw6Hdb1w/female-vulnerability.png" alt="Female students' vulnerability factors">
+<img src="imgs/arts_education_charts_en/female_vulnerability.png" alt="Female students' vulnerability factors">
 
 ## Key Findings
 
@@ -117,7 +117,7 @@ The research uncovered that arts and sports departments had significantly higher
 - Professors serve as crucial industry gatekeepers for students' future careers
 - "Artistic expression" is often used to justify inappropriate sexual behavior
 
-<img src="https://i.ibb.co/VWgPSj87/harassment-by-gender.png" alt="Harassment experiences by gender">
+<img src="imgs/arts_education_charts_en/harassment_by_gender.png" alt="Harassment experiences by gender">
 
 ### High-Risk Environments
 
@@ -130,7 +130,7 @@ Sexual harassment occurs in multiple settings within arts education:
 
 Physical contact during practice sessions creates particularly ambiguous situations without clear boundaries or consent guidelines.
 
-<img src="https://i.ibb.co/zhQ1c9T8/harassment-locations.png" alt="Common locations of harassment incidents">
+<img src="imgs/arts_education_charts_en/harassment_locations.png" alt="Common locations of harassment incidents">
 
 ### Structural Factors
 
@@ -142,7 +142,7 @@ The study identified several institutional failures that allow abuse to continue
 - Disciplinary actions against perpetrators are frequently lenient or poorly enforced
 - Victims face secondary trauma during investigation processes
 
-<img src="https://i.ibb.co/9HYYDVpZ/structural-factors.png" alt="Structural factors enabling abuse">
+<img src="imgs/arts_education_charts_en/structural_factors.png" alt="Structural factors enabling abuse">
 
 ## Student Responses and Activism
 
@@ -155,7 +155,7 @@ The Me Too movement empowered students to speak out through various channels:
 
 Students organized to collect incident reports, demand university action, represent victims in disciplinary processes, and provide support resources. However, they frequently encountered resistance from institutions and faculty.
 
-<img src="https://i.ibb.co/J94Cs03/student-demands.png" alt="Student demands">
+<img src="imgs/arts_education_charts_en/student_demands.png" alt="Student demands">
 
 ## Recommendations for Change
 
