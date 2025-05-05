@@ -1,4 +1,4 @@
-# Timeline: Sexual Violence at Dongguk University
+# Timeline: Fake Partnerships, Sexual Violence at Dongguk University
 
 ## Website Links
 - [English](https://genderwatchdog1.github.io/timeline-website/index.html)
@@ -14,66 +14,66 @@
 **Description**: Major institutional scandal involving misrepresentation at Dongguk University
 
 **Available in**:
-- [English](https://genderwatchdog.bearblog.dev/shingate-how-dongguk-university-leveraged-us-law-then-ignored-its-values/)
-- [简体中文 (Simplified Chinese)](https://genderwatchdog.bearblog.dev/3113/)
-- [繁體中文 (Traditional Chinese)](https://genderwatchdog.bearblog.dev/3978/)
-- [日本語 (Japanese)](https://genderwatchdog.bearblog.dev/4910/)
-- [한국어 (Korean)](https://genderwatchdog.bearblog.dev/shingate-how-dongguk-university-leveraged-us-law-then-ignored-its-values/)
+- [English](/shingate-how-dongguk-university-leveraged-us-law-then-ignored-its-values/)
+- [简体中文 (Simplified Chinese)](/shingate-how-dongguk-university-leveraged-us-law-then-ignored-its-values-zh-ch/)
+- [繁體中文 (Traditional Chinese)](/shingate-how-dongguk-university-leveraged-us-law-then-ignored-its-values-zh-tw/)
+- [日本語 (Japanese)](/shingate-how-dongguk-university-leveraged-us-law-then-ignored-its-values-ja/)
+- [한국어 (Korean)](/shingate-how-dongguk-university-leveraged-us-law-then-ignored-its-values/)
 
 ### November 2015: Sexual Assault by Media Communication Professor
 
 **Description**: Professor commits sexual assault against a graduate student at Dongguk University
 
 **Available in**:
-- [English](https://genderwatchdog.bearblog.dev/2016-sexual-assault-case-media-communication-professor-at-dongguk-university/)
-- [简体中文 (Simplified Chinese)](https://genderwatchdog.bearblog.dev/2016-new-new-new/)
-- [繁體中文 (Traditional Chinese)](https://genderwatchdog.bearblog.dev/2016-new-new-new-new-new-new/)
-- [日本語 (Japanese)](https://genderwatchdog.bearblog.dev/2016/)
-- [한국어 (Korean)](https://genderwatchdog.bearblog.dev/2016-new/)
+- [English](/2016-sexual-assault-case-media-communication-professor-at-dongguk-university/)
+- [简体中文 (Simplified Chinese)](/2016-sexual-assault-case-media-communication-professor-at-dongguk-university-zh-ch/)
+- [繁體中文 (Traditional Chinese)](/2016-sexual-assault-case-media-communication-professor-at-dongguk-university-zh-tw/)
+- [日本語 (Japanese)](/2016-sexual-assault-case-media-communication-professor-at-dongguk-university-ja/)
+- [한국어 (Korean)](/2016-sexual-assault-case-media-communication-professor-at-dongguk-university-ko/)
 
 ### February 2016: Media Communication Professor Sexual Assault Case Reported
 
 **Description**: Sexual assault case formally reported to university administration
 
 **Available in**:
-- [English](https://genderwatchdog.bearblog.dev/2016-sexual-assault-case-media-communication-professor-at-dongguk-university/)
-- [简体中文 (Simplified Chinese)](https://genderwatchdog.bearblog.dev/2016-new-new-new/)
-- [繁體中文 (Traditional Chinese)](https://genderwatchdog.bearblog.dev/2016-new-new-new-new-new-new/)
-- [日本語 (Japanese)](https://genderwatchdog.bearblog.dev/2016/)
-- [한국어 (Korean)](https://genderwatchdog.bearblog.dev/2016-new/)
+- [English](/2016-sexual-assault-case-media-communication-professor-at-dongguk-university/)
+- [简体中文 (Simplified Chinese)](/2016-sexual-assault-case-media-communication-professor-at-dongguk-university-zh-ch/)
+- [繁體中文 (Traditional Chinese)](/2016-sexual-assault-case-media-communication-professor-at-dongguk-university-zh-tw/)
+- [日本語 (Japanese)](/2016-sexual-assault-case-media-communication-professor-at-dongguk-university-ja/)
+- [한국어 (Korean)](/2016-sexual-assault-case-media-communication-professor-at-dongguk-university-ko/)
 
 ### August 2016: Professor Replacement Policy
 
 **Description**: Policy created allowing students to switch professors in sexual violence cases
 
 **Available in**:
-- [English](https://genderwatchdog.bearblog.dev/inside-dongguk-a-decade-of-gender-inequality-and-institutional-failure-20162025/#1-2016-professor-replacement-policy)
-- [简体中文 (Simplified Chinese)](https://genderwatchdog.bearblog.dev/20162025/) - *scroll to "一、2016年：教授更换政策"*
-- [繁體中文 (Traditional Chinese)](https://genderwatchdog.bearblog.dev/20162025-new-new-new-new-new-new/) - *scroll to "一、2016年：教授更換政策"*
-- [日本語 (Japanese)](https://genderwatchdog.bearblog.dev/20162025-new-new-new/) - *scroll to "1. 2016年：教授交代ポリシー"*
-- [한국어 (Korean)](https://genderwatchdog.bearblog.dev/20162025-new/) - *scroll to "1. 2016년: 교수 교체 정책"*
+- [English](/inside-dongguk-a-decade-of-sexual-violence-and-institutional-failure-20162025/)
+- [简体中文 (Simplified Chinese)](/inside-dongguk-a-decade-of-sexual-violence-and-institutional-failure-20162025-zh-ch/)
+- [繁體中文 (Traditional Chinese)](/inside-dongguk-a-decade-of-sexual-violence-and-institutional-failure-20162025-zh-tw/)
+- [日本語 (Japanese)](/inside-dongguk-a-decade-of-sexual-violence-and-institutional-failure-20162025-ja/)
+- [한국어 (Korean)](/inside-dongguk-a-decade-of-sexual-violence-and-institutional-failure-20162025-ko/)
 
 ### 2018: Abolition of Female Student Council
 
 **Description**: Key advocacy group for female students eliminated during MeToo movement
 
 **Available in**:
-- [English](https://genderwatchdog.bearblog.dev/inside-dongguk-a-decade-of-gender-inequality-and-institutional-failure-20162025/#2-2018-metoo-movement-abolition-of-the-womens-student-council)
-- [简体中文 (Simplified Chinese)](https://genderwatchdog.bearblog.dev/20162025/) - *scroll to "二、2018年：MeToo运动与女性学生会被解散"*
-- [繁體中文 (Traditional Chinese)](https://genderwatchdog.bearblog.dev/20162025-new-new-new-new-new-new/) - *scroll to "二、2018年：MeToo 運動與女性學生會解散"*
-- [日本語 (Japanese)](https://genderwatchdog.bearblog.dev/20162025-new-new-new/) - *scroll to "2. 2018年：MeToo運動と女性学生会の廃止"*
-- [한국어 (Korean)](https://genderwatchdog.bearblog.dev/20162025-new/) - *scroll to "2. 2018년: MeToo 운동과 여학생회 폐지"*
+- [English](/inside-dongguk-a-decade-of-sexual-violence-and-institutional-failure-20162025/)
+- [简体中文 (Simplified Chinese)](/inside-dongguk-a-decade-of-sexual-violence-and-institutional-failure-20162025-zh-ch/)
+- [繁體中文 (Traditional Chinese)](/inside-dongguk-a-decade-of-sexual-violence-and-institutional-failure-20162025-zh-tw/)
+- [日本語 (Japanese)](/inside-dongguk-a-decade-of-sexual-violence-and-institutional-failure-20162025-ja/)
+- [한국어 (Korean)](/inside-dongguk-a-decade-of-sexual-violence-and-institutional-failure-20162025-ko/)
 
 ### 2020: KWDI Report on Sexual Violence in Arts Education
 
 **Description**: Korean Women's Development Institute documents sexual violence issues in arts education
 
 **Available in**:
-- [English](https://genderwatchdog.bearblog.dev/sexual-violence-in-arts-education-after-me-too-current-status-and-policy-issues/)
-- [简体中文 (Simplified Chinese)](https://genderwatchdog.bearblog.dev/9226/)
-- [繁體中文 (Traditional Chinese)](https://genderwatchdog.bearblog.dev/3878/)
-- [日本語 (Japanese)](https://genderwatchdog.bearblog.dev/me-too/)
-- [한국어 (Korean)](https://genderwatchdog.bearblog.dev/sexual-violence-in-arts-education-after-me-too-current-status-and-policy-issues/)
+- [English](/sexual-violence-in-arts-education-after-me-too-current-status-and-policy-issues/)
+- [简体中文 (Simplified Chinese)](/sexual-violence-in-arts-education-after-me-too-current-status-and-policy-issues-zh-ch/)
+- [繁體中文 (Traditional Chinese)](/sexual-violence-in-arts-education-after-me-too-current-status-and-policy-issues-zh-tw/)
+- [日本語 (Japanese)](/sexual-violence-in-arts-education-after-me-too-current-status-and-policy-issues-ja/)
+- [한국어 (Korean)](/sexual-violence-in-arts-education-after-me-too-current-status-and-policy-issues-ko/)
 
 ### March 8-9, 2025: Email Outreach Begins
 
@@ -102,11 +102,11 @@
 **Description**: Comprehensive documentation of sexual violence negligence at Dongguk University
 
 **Available in**:
-- [English](https://genderwatchdog.bearblog.dev/inside-dongguk-a-decade-of-gender-inequality-and-institutional-failure-20162025/)
-- [简体中文 (Simplified Chinese)](https://genderwatchdog.bearblog.dev/20162025/)
-- [繁體中文 (Traditional Chinese)](https://genderwatchdog.bearblog.dev/20162025-new-new-new-new-new-new/)
-- [日本語 (Japanese)](https://genderwatchdog.bearblog.dev/20162025-new-new-new/)
-- [한국어 (Korean)](https://genderwatchdog.bearblog.dev/20162025-new/)
+- [English](/inside-dongguk-a-decade-of-sexual-violence-and-institutional-failure-20162025/)
+- [简体中文 (Simplified Chinese)](/inside-dongguk-a-decade-of-sexual-violence-and-institutional-failure-20162025-zh-ch/)
+- [繁體中文 (Traditional Chinese)](/inside-dongguk-a-decade-of-sexual-violence-and-institutional-failure-20162025-zh-tw/)
+- [日本語 (Japanese)](/inside-dongguk-a-decade-of-sexual-violence-and-institutional-failure-20162025-ja/)
+- [한국어 (Korean)](/inside-dongguk-a-decade-of-sexual-violence-and-institutional-failure-20162025-ko/)
 
 ### April 5-6, 2025: Email Escalation Mentioning Title IX Risks
 
@@ -124,11 +124,11 @@
 **Description**: Multiple institutions respond to inquiries about partnership with Dongguk University
 
 **Available in**:
-- [English](https://genderwatchdog.bearblog.dev/title-ix-and-fake-partnerships-dongguk-university-under-global-review/)
-- [简体中文 (Simplified Chinese)](https://genderwatchdog.bearblog.dev/title-ix-and-fake-partnerships-dongguk-university-under-global-review-zh-hans/)
-- [繁體中文 (Traditional Chinese)](https://genderwatchdog.bearblog.dev/title-ix-and-fake-partnerships-dongguk-university-under-global-review-zh-hant/)
-- [日本語 (Japanese)](https://genderwatchdog.bearblog.dev/title-ix-and-fake-partnerships-dongguk-university-under-global-review-ja/)
-- [한국어 (Korean)](https://genderwatchdog.bearblog.dev/title-ix-and-fake-partnerships-university-under-global-review-ko/)
+- [English](/title-ix-and-fake-partnerships-dongguk-university-under-global-review/)
+- [简体中文 (Simplified Chinese)](/title-ix-and-fake-partnerships-dongguk-university-under-global-review-zh-ch/)
+- [繁體中文 (Traditional Chinese)](/title-ix-and-fake-partnerships-dongguk-university-under-global-review-zh-tw/)
+- [日本語 (Japanese)](/title-ix-and-fake-partnerships-dongguk-university-under-global-review-ja/)
+- [한국어 (Korean)](/title-ix-and-fake-partnerships-university-under-global-review-ko/)
 
 ### Since April 6, 2025: University Silence
 
