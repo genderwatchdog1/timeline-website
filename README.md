@@ -17,7 +17,7 @@ We believe these important issues should be freely accessible and shareable with
 ## How to Access This Repository
 
 ### Option 1: View Online (Easiest Method)
-Visit the [Gender Watchdog Timeline Website](https://genderwatchdog1.github.io/timeline-website/index.html) to view all materials online.
+Visit the [Gender Watchdog Timeline Website](https://genderwatchdog.org) to view all materials online.
 
 ### Option 2: Download as ZIP File
 1. Visit the [repository website](https://github.com/genderwatchdog1/timeline-website)
@@ -178,14 +178,14 @@ Creating safe educational environments in arts fields requires addressing the un
 ## Contact and Additional Resources
 
 - Email: [genderwatchdog@proton.me](mailto:genderwatchdog@proton.me)
-- Website: [Gender Watchdog Blog](https://genderwatchdog.bearblog.dev/)
+- Website: [Gender Watchdog Blog](https://blog.genderwatchdog.org/)
 
 **Sources:**
 - [Download charts (.png)](https://drive.proton.me/urls/JQ0FXSJJPC#JMkuipzUtH3B)
 - [Download full report (PDF)](https://drive.proton.me/urls/BAPF2DA400#4RGLR08iLFAJ)
 - [Archived Faculty Directory - Dongguk University](https://web.archive.org/web/20250413005624/https://www.dongguk.edu/eng/dandae/122#)
-- [Gender Watchdog - Structural Risk Report](https://genderwatchdog.bearblog.dev/between-ethics-and-exploitation-gender-risk-in-koreas-buddhist-affiliated-film-program/)
-- [Fictional Partnerships with North American Universities](https://genderwatchdog.bearblog.dev/title-ix-and-fake-partnerships-dongguk-university-under-global-review/)
+- [Gender Watchdog - Structural Risk Report](https://blog.genderwatchdog.org/between-ethics-and-exploitation-gender-risk-in-koreas-buddhist-affiliated-film-program/)
+- [Fictional Partnerships with North American Universities](https://blog.genderwatchdog.org/title-ix-and-fake-partnerships-dongguk-university-under-global-review/)
 - [Screenshots of Responses](https://drive.proton.me/urls/95J0T3K37R#RBCO657BAC6a)
 - Original research: "Current Status of Sexual Violence Against University Students in the Culture and Arts after the Me Too Movement and Policy Issues" (2020) by Mijeong Lee, Deuk-kyoung Yoon, Heasang Jeon, Sooyeon Jung, Sung-Mi Lee, Korean Women's Development Institute
 
