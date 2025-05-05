@@ -1,5 +1,6 @@
 import os
 import re
+import sys
 import requests
 from bs4 import BeautifulSoup
 
@@ -54,8 +55,20 @@ def check_link(url):
 
 
 def main():
+    # Check if a specific file was provided as a command-line argument
+    files_to_check = []
+    if len(sys.argv) > 1:
+        file_param = sys.argv[1]
+        if os.path.exists(file_param):
+            files_to_check = [file_param]
+        else:
+            print(f"Error: File '{file_param}' not found.")
+            return
+    else:
+        files_to_check = HTML_FILES
+    
     all_passed = True
-    for html_file in HTML_FILES:
+    for html_file in files_to_check:
         if not os.path.exists(html_file):
             print(f'File not found: {html_file}')
             all_passed = False
@@ -67,10 +80,15 @@ def main():
         for link in links:
             if not check_link(link):
                 all_passed = False
+    
     if all_passed:
-        print('\nAll HTML files loaded and all blog links are valid!')
+        if len(files_to_check) == 1:
+            print(f'\nAll blog links in {files_to_check[0]} are valid!')
+        else:
+            print('\nAll HTML files loaded and all blog links are valid!')
     else:
         print('\nSome errors or broken links found. See above for details.')
 
+
 if __name__ == '__main__':
-    main()
+    main() 
