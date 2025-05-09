@@ -1,0 +1,45 @@
+/* Blog post styles */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.article-body img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+.language-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.language-link {
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.language-link.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
