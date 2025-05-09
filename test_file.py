@@ -2,9 +2,10 @@ import os
 import re
 import sys
 import requests
+from urllib.parse import urljoin, urlparse
 from bs4 import BeautifulSoup
 
-# List of HTML files to check
+# List of HTML files to check (default in root directory)
 HTML_FILES = [
     'index.html',
     'timeline_ko.html',
@@ -30,22 +31,48 @@ def check_html_file(filepath):
     except Exception as e:
         print(f'  ERROR: Could not parse {filepath}: {e}')
         return False, []
-    # Find all <a> tags in tooltips
-    links = []
-    for tooltip in soup.select('.timeline-tooltip'):
-        for a in tooltip.find_all('a', href=True):
-            href = a['href']
-            if BLOG_LINK_RE.match(href):
-                links.append(href)
-    print(f'  Found {len(links)} blog links in tooltips.')
-    return True, links
+    
+    # Find all links in the document
+    external_links = []
+    internal_links = []
+    
+    for a in soup.find_all('a', href=True):
+        href = a['href'].strip()
+        
+        # Skip empty links, javascript links, and anchor links
+        if not href or href.startswith('javascript:') or href == '#' or href.startswith('#'):
+            continue
+            
+        # Check if it's an external link
+        if href.startswith('http://') or href.startswith('https://'):
+            external_links.append(href)
+        else:
+            # It's a relative link - capture link text for better reporting
+            link_text = a.get_text(strip=True) or "[No text]"
+            internal_links.append((href, link_text))
+    
+    print(f'  Found {len(external_links)} external links and {len(internal_links)} internal links.')
+    return True, (external_links, internal_links, filepath)
 
 
-def check_link(url):
+def check_external_link(url):
+    """Verify external URL by making a HEAD request"""
     try:
         resp = requests.head(url, allow_redirects=True, timeout=10)
         if resp.status_code == 200:
             return True
+        # Some sites don't accept HEAD requests, try GET if HEAD fails
+        elif resp.status_code == 405:  # Method Not Allowed
+            try:
+                resp = requests.get(url, timeout=10)
+                if resp.status_code == 200:
+                    return True
+                else:
+                    print(f'    BAD LINK: {url} (status {resp.status_code})')
+                    return False
+            except Exception as e:
+                print(f'    ERROR: GET request failed for {url}: {e}')
+                return False
         else:
             print(f'    BAD LINK: {url} (status {resp.status_code})')
             return False
@@ -54,40 +81,141 @@ def check_link(url):
         return False
 
 
+def check_internal_link(link_info, base_file):
+    """Verify internal link by checking if the file exists on disk"""
+    link, link_text = link_info
+    # Get the directory of the current HTML file
+    base_dir = os.path.dirname(os.path.abspath(base_file))
+    
+    # Handle different types of relative paths
+    if link.startswith('/'):
+        # Absolute path from project root
+        target_path = os.path.join(os.getcwd(), link.lstrip('/'))
+    else:
+        # Relative path from current file
+        target_path = os.path.normpath(os.path.join(base_dir, link))
+    
+    # If link contains an anchor (#), strip it off for file existence check
+    if '#' in target_path:
+        target_path = target_path.split('#')[0]
+        
+    # If link is empty after stripping anchor, it's a self-reference
+    if not target_path:
+        return True
+        
+    # If it ends with /, assume it's a directory and check for its existence
+    if target_path.endswith('/'):
+        exists = os.path.isdir(target_path)
+        if not exists:
+            print(f'    BAD LINK: "{link}" → "{link_text}" (directory not found at {target_path})')
+        return exists
+    
+    # Check if file exists
+    exists = os.path.exists(target_path)
+    if not exists:
+        print(f'    BAD LINK: "{link}" → "{link_text}" (file not found at {target_path})')
+    return exists
+
+
+def find_html_files(directory):
+    """Recursively find all HTML files in a directory"""
+    html_files = []
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            if file.lower().endswith('.html'):
+                html_files.append(os.path.join(root, file))
+    return html_files
+
+
 def main():
-    # Check if a specific file was provided as a command-line argument
+    # Check if a specific file or directory was provided as a command-line argument
     files_to_check = []
+    
     if len(sys.argv) > 1:
-        file_param = sys.argv[1]
-        if os.path.exists(file_param):
-            files_to_check = [file_param]
+        path_param = sys.argv[1]
+        
+        if os.path.isfile(path_param):
+            # Single file mode
+            if path_param.lower().endswith('.html'):
+                files_to_check = [path_param]
+            else:
+                print(f"Error: File '{path_param}' is not an HTML file.")
+                return
+        elif os.path.isdir(path_param):
+            # Directory mode - scan recursively
+            print(f"Scanning directory '{path_param}' for HTML files...")
+            files_to_check = find_html_files(path_param)
+            print(f"Found {len(files_to_check)} HTML files to check.")
         else:
-            print(f"Error: File '{file_param}' not found.")
+            print(f"Error: Path '{path_param}' not found.")
             return
     else:
-        files_to_check = HTML_FILES
+        # Default mode - check predefined files and also scan all directories
+        print("No path specified. Checking default files and scanning all directories recursively...")
+        files_to_check = HTML_FILES.copy()
+        html_in_dirs = find_html_files('.')
+        
+        # Only add files that aren't already in the default list
+        for html_file in html_in_dirs:
+            if html_file not in files_to_check and os.path.normpath(html_file) not in files_to_check:
+                files_to_check.append(html_file)
+        
+        print(f"Found {len(files_to_check)} HTML files to check.")
     
     all_passed = True
+    file_count = 0
+    external_links_count = 0
+    internal_links_count = 0
+    broken_external_links = 0
+    broken_internal_links = 0
+    
+    print("\n=== Checking HTML files ===\n")
+    
     for html_file in files_to_check:
         if not os.path.exists(html_file):
             print(f'File not found: {html_file}')
             all_passed = False
             continue
-        ok, links = check_html_file(html_file)
+        
+        file_count += 1
+        ok, link_data = check_html_file(html_file)
         if not ok:
             all_passed = False
             continue
-        for link in links:
-            if not check_link(link):
-                all_passed = False
+        
+        external_links, internal_links, base_file = link_data
+        external_links_count += len(external_links)
+        internal_links_count += len(internal_links)
+        
+        # Check external links
+        if external_links:
+            print(f"  Checking {len(external_links)} external links...")
+            for link in external_links:
+                if not check_external_link(link):
+                    broken_external_links += 1
+                    all_passed = False
+        
+        # Check internal links
+        if internal_links:
+            print(f"  Checking {len(internal_links)} internal links...")
+            for link_info in internal_links:
+                if not check_internal_link(link_info, base_file):
+                    broken_internal_links += 1
+                    all_passed = False
+    
+    print("\n=== Summary ===")
+    print(f"Checked {file_count} HTML files")
+    print(f"Found {external_links_count} external links ({broken_external_links} broken)")
+    print(f"Found {internal_links_count} internal links ({broken_internal_links} broken)")
     
     if all_passed:
-        if len(files_to_check) == 1:
-            print(f'\nAll blog links in {files_to_check[0]} are valid!')
-        else:
-            print('\nAll HTML files loaded and all blog links are valid!')
+        print("\n✅ All links are valid!")
     else:
-        print('\nSome errors or broken links found. See above for details.')
+        print(f"\n❌ Found {broken_external_links + broken_internal_links} broken links. See details above.")
+        
+    print("\nNOTE: Relative links are verified by checking if the file exists on your local filesystem.")
+    print("      This script does NOT make HTTP requests for relative links - it only confirms the files exist.")
+    print("      Be sure that your production server structure matches your local development environment.")
 
 
 if __name__ == '__main__':
