@@ -35,12 +35,19 @@ def check_html_file(filepath):
     # Find all links in the document
     external_links = []
     internal_links = []
+    special_links = []  # For mailto, tel, etc.
     
     for a in soup.find_all('a', href=True):
         href = a['href'].strip()
         
         # Skip empty links, javascript links, and anchor links
         if not href or href.startswith('javascript:') or href == '#' or href.startswith('#'):
+            continue
+        
+        # Check for special protocol links (mailto, tel, etc.)
+        if href.startswith('mailto:') or href.startswith('tel:'):
+            link_text = a.get_text(strip=True) or "[No text]"
+            special_links.append((href, link_text))
             continue
             
         # Check if it's an external link
@@ -51,8 +58,8 @@ def check_html_file(filepath):
             link_text = a.get_text(strip=True) or "[No text]"
             internal_links.append((href, link_text))
     
-    print(f'  Found {len(external_links)} external links and {len(internal_links)} internal links.')
-    return True, (external_links, internal_links, filepath)
+    print(f'  Found {len(external_links)} external links, {len(internal_links)} internal links, and {len(special_links)} special links.')
+    return True, (external_links, internal_links, special_links, filepath)
 
 
 def check_external_link(url):
@@ -117,6 +124,33 @@ def check_internal_link(link_info, base_file):
     return exists
 
 
+def check_special_link(link_info):
+    """Verify special links like mailto: and tel:"""
+    href, link_text = link_info
+    
+    # For mailto links, just check basic format
+    if href.startswith('mailto:'):
+        email = href[7:]  # Remove 'mailto:' prefix
+        # Very basic email validation
+        if '@' in email and '.' in email.split('@')[1]:
+            return True
+        else:
+            print(f'    BAD LINK: "{href}" → "{link_text}" (invalid email format)')
+            return False
+    
+    # For tel links, just check if it contains digits
+    elif href.startswith('tel:'):
+        phone = href[4:]  # Remove 'tel:' prefix
+        if any(char.isdigit() for char in phone):
+            return True
+        else:
+            print(f'    BAD LINK: "{href}" → "{link_text}" (invalid phone format)')
+            return False
+    
+    # Other special protocols - assume valid
+    return True
+
+
 def find_html_files(directory):
     """Recursively find all HTML files in a directory"""
     html_files = []
@@ -166,8 +200,10 @@ def main():
     file_count = 0
     external_links_count = 0
     internal_links_count = 0
+    special_links_count = 0
     broken_external_links = 0
     broken_internal_links = 0
+    broken_special_links = 0
     
     print("\n=== Checking HTML files ===\n")
     
@@ -183,9 +219,10 @@ def main():
             all_passed = False
             continue
         
-        external_links, internal_links, base_file = link_data
+        external_links, internal_links, special_links, base_file = link_data
         external_links_count += len(external_links)
         internal_links_count += len(internal_links)
+        special_links_count += len(special_links)
         
         # Check external links
         if external_links:
@@ -202,19 +239,29 @@ def main():
                 if not check_internal_link(link_info, base_file):
                     broken_internal_links += 1
                     all_passed = False
+        
+        # Check special links (mailto, tel, etc.)
+        if special_links:
+            print(f"  Checking {len(special_links)} special links (mailto, tel, etc.)...")
+            for link_info in special_links:
+                if not check_special_link(link_info):
+                    broken_special_links += 1
+                    all_passed = False
     
     print("\n=== Summary ===")
     print(f"Checked {file_count} HTML files")
     print(f"Found {external_links_count} external links ({broken_external_links} broken)")
     print(f"Found {internal_links_count} internal links ({broken_internal_links} broken)")
+    print(f"Found {special_links_count} special links ({broken_special_links} broken)")
     
     if all_passed:
         print("\n✅ All links are valid!")
     else:
-        print(f"\n❌ Found {broken_external_links + broken_internal_links} broken links. See details above.")
+        print(f"\n❌ Found {broken_external_links + broken_internal_links + broken_special_links} broken links. See details above.")
         
     print("\nNOTE: Relative links are verified by checking if the file exists on your local filesystem.")
     print("      This script does NOT make HTTP requests for relative links - it only confirms the files exist.")
+    print("      Special links like mailto: are validated for basic format only.")
     print("      Be sure that your production server structure matches your local development environment.")
 
 
