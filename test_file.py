@@ -67,25 +67,29 @@ def check_external_link(url):
     try:
         resp = requests.head(url, allow_redirects=True, timeout=10)
         if resp.status_code == 200:
-            return True
+            return True, None
         # Some sites don't accept HEAD requests, try GET if HEAD fails
         elif resp.status_code == 405:  # Method Not Allowed
             try:
                 resp = requests.get(url, timeout=10)
                 if resp.status_code == 200:
-                    return True
+                    return True, None
                 else:
-                    print(f'    BAD LINK: {url} (status {resp.status_code})')
-                    return False
+                    error_msg = f'Status {resp.status_code}'
+                    print(f'    BAD LINK: {url} ({error_msg})')
+                    return False, error_msg
             except Exception as e:
-                print(f'    ERROR: GET request failed for {url}: {e}')
-                return False
+                error_msg = f'GET request failed: {e}'
+                print(f'    ERROR: {error_msg} for {url}')
+                return False, error_msg
         else:
-            print(f'    BAD LINK: {url} (status {resp.status_code})')
-            return False
+            error_msg = f'Status {resp.status_code}'
+            print(f'    BAD LINK: {url} ({error_msg})')
+            return False, error_msg
     except Exception as e:
+        error_msg = f'Connection error: {e}'
         print(f'    ERROR: Could not reach {url}: {e}')
-        return False
+        return False, error_msg
 
 
 def check_internal_link(link_info, base_file):
@@ -108,20 +112,24 @@ def check_internal_link(link_info, base_file):
         
     # If link is empty after stripping anchor, it's a self-reference
     if not target_path:
-        return True
+        return True, None
         
     # If it ends with /, assume it's a directory and check for its existence
     if target_path.endswith('/'):
         exists = os.path.isdir(target_path)
         if not exists:
-            print(f'    BAD LINK: "{link}" → "{link_text}" (directory not found at {target_path})')
-        return exists
+            error_msg = f'Directory not found at {target_path}'
+            print(f'    BAD LINK: "{link}" → "{link_text}" ({error_msg})')
+            return False, error_msg
+        return True, None
     
     # Check if file exists
     exists = os.path.exists(target_path)
     if not exists:
-        print(f'    BAD LINK: "{link}" → "{link_text}" (file not found at {target_path})')
-    return exists
+        error_msg = f'File not found at {target_path}'
+        print(f'    BAD LINK: "{link}" → "{link_text}" ({error_msg})')
+        return False, error_msg
+    return True, None
 
 
 def check_special_link(link_info):
@@ -133,22 +141,24 @@ def check_special_link(link_info):
         email = href[7:]  # Remove 'mailto:' prefix
         # Very basic email validation
         if '@' in email and '.' in email.split('@')[1]:
-            return True
+            return True, None
         else:
-            print(f'    BAD LINK: "{href}" → "{link_text}" (invalid email format)')
-            return False
+            error_msg = 'Invalid email format'
+            print(f'    BAD LINK: "{href}" → "{link_text}" ({error_msg})')
+            return False, error_msg
     
     # For tel links, just check if it contains digits
     elif href.startswith('tel:'):
         phone = href[4:]  # Remove 'tel:' prefix
         if any(char.isdigit() for char in phone):
-            return True
+            return True, None
         else:
-            print(f'    BAD LINK: "{href}" → "{link_text}" (invalid phone format)')
-            return False
+            error_msg = 'Invalid phone format'
+            print(f'    BAD LINK: "{href}" → "{link_text}" ({error_msg})')
+            return False, error_msg
     
     # Other special protocols - assume valid
-    return True
+    return True, None
 
 
 def find_html_files(directory):
@@ -205,6 +215,9 @@ def main():
     broken_internal_links = 0
     broken_special_links = 0
     
+    # Track broken links for summary
+    broken_links_summary = {}
+    
     print("\n=== Checking HTML files ===\n")
     
     for html_file in files_to_check:
@@ -219,6 +232,9 @@ def main():
             all_passed = False
             continue
         
+        # Create an entry for this file in the broken links summary
+        broken_links_summary[html_file] = []
+        
         external_links, internal_links, special_links, base_file = link_data
         external_links_count += len(external_links)
         internal_links_count += len(internal_links)
@@ -228,25 +244,37 @@ def main():
         if external_links:
             print(f"  Checking {len(external_links)} external links...")
             for link in external_links:
-                if not check_external_link(link):
+                ok, error = check_external_link(link)
+                if not ok:
                     broken_external_links += 1
+                    broken_links_summary[html_file].append((link, "External", error))
                     all_passed = False
         
         # Check internal links
         if internal_links:
             print(f"  Checking {len(internal_links)} internal links...")
             for link_info in internal_links:
-                if not check_internal_link(link_info, base_file):
+                link, link_text = link_info
+                ok, error = check_internal_link(link_info, base_file)
+                if not ok:
                     broken_internal_links += 1
+                    broken_links_summary[html_file].append((link, "Internal", error))
                     all_passed = False
         
         # Check special links (mailto, tel, etc.)
         if special_links:
             print(f"  Checking {len(special_links)} special links (mailto, tel, etc.)...")
             for link_info in special_links:
-                if not check_special_link(link_info):
+                href, link_text = link_info
+                ok, error = check_special_link(link_info)
+                if not ok:
                     broken_special_links += 1
+                    broken_links_summary[html_file].append((href, "Special", error))
                     all_passed = False
+        
+        # Remove files with no broken links from the summary
+        if not broken_links_summary[html_file]:
+            del broken_links_summary[html_file]
     
     print("\n=== Summary ===")
     print(f"Checked {file_count} HTML files")
@@ -254,10 +282,20 @@ def main():
     print(f"Found {internal_links_count} internal links ({broken_internal_links} broken)")
     print(f"Found {special_links_count} special links ({broken_special_links} broken)")
     
+    total_broken = broken_external_links + broken_internal_links + broken_special_links
+    
     if all_passed:
         print("\n✅ All links are valid!")
     else:
-        print(f"\n❌ Found {broken_external_links + broken_internal_links + broken_special_links} broken links. See details above.")
+        print(f"\n❌ Found {total_broken} broken links.")
+        
+        # Print the broken links summary
+        print("\n=== Broken Links Details ===")
+        for file_path, broken_links in broken_links_summary.items():
+            if broken_links:
+                print(f"\n📄 {file_path}")
+                for link, link_type, error in broken_links:
+                    print(f"  • [{link_type}] {link} - {error}")
         
     print("\nNOTE: Relative links are verified by checking if the file exists on your local filesystem.")
     print("      This script does NOT make HTTP requests for relative links - it only confirms the files exist.")
