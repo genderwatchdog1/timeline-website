@@ -248,119 +248,105 @@ h1 {
    ========================================== */
 
 /* Vertical timeline for single column mode */
-body.single-column-mode .timeline-container {
-  padding-left: 30px;
-}
-
 body.single-column-mode .timeline-track {
-  top: 0;
-  left: 10px;
   width: 4px;
   height: 100%;
-  margin-top: 0;
+  left: 30px;
+  top: 0;
+  bottom: 0;
 }
 
 body.single-column-mode .timeline {
   padding-top: 0;
+  padding-left: 50px;
 }
 
 body.single-column-mode .timeline-date {
-  text-align: left;
-  margin-left: 20px;
+  margin-left: 0;
   margin-bottom: 5px;
+  font-size: 0.9em;
 }
 
 body.single-column-mode .timeline-dot {
   position: absolute;
-  left: -26px;
-  top: 0;
+  left: -44px;
+  top: 50%;
+  transform: translateY(-50%);
   margin: 0;
 }
 
 body.single-column-mode .timeline-content {
   margin-bottom: 30px;
-  margin-left: 0;
   position: relative;
-  z-index: 2;
+  transition: background-color 0.3s;
 }
 
-/* Single column tooltip styles - completely different behavior */
+/* Tooltip for mobile/single column view */
 body.single-column-mode .timeline-tooltip {
-  /* Reset the absolute positioning */
   position: static;
-  top: auto;
-  left: auto;
-  right: auto;
-  transform: none;
-  
-  /* Block-level display properties */
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  margin: 15px 0 5px 0;
-  
-  /* Hidden by default */
-  height: 0;
-  padding: 0;
-  opacity: 0;
   visibility: hidden;
+  opacity: 0;
+  transform: none;
+  width: 100%;
+  margin-top: 15px;
+  pointer-events: none;
+  max-height: 0;
   overflow: hidden;
-  
-  /* Other settings */
-  box-sizing: border-box;
-  border: 0;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-  z-index: 2;
+  transition: max-height 0.3s, opacity 0.3s, visibility 0.3s, margin 0.3s;
 }
 
-/* Active state - only shown when .active class is present */
+/* Remove arrow in single column mode since tooltip is below content */
+body.single-column-mode .timeline-tooltip::before,
+body.single-column-mode .timeline-tooltip::after {
+  display: none;
+}
+
+/* Show tooltip when event is active in single column mode */
 body.single-column-mode .timeline-event.active .timeline-tooltip {
-  height: auto;
-  padding: 15px;
-  opacity: 1;
   visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  max-height: 800px;
   overflow: visible;
-  border: 1px solid var(--tooltip-border-color);
+  margin-bottom: 15px;
 }
 
-/* Up/down arrow indicators */
+/* Arrow to indicate expandable content */
 body.single-column-mode .timeline-content::after {
-  content: "\25BC";  /* Down arrow */
+  content: '▼';
   position: absolute;
   right: 15px;
   bottom: 15px;
-  font-size: 10px;
+  font-size: 0.8em;
   color: #999;
+  transition: transform 0.3s;
 }
 
 body.single-column-mode .timeline-event.active .timeline-content::after {
-  content: "\25B2";  /* Up arrow */
+  transform: rotate(180deg);
 }
 
-/* Disable hover effect for event cards */
+/* Disable hover effects in single column mode */
 body.single-column-mode .timeline-event:hover {
   transform: none;
 }
 
-/* Remove hover-based tooltip display in single column mode */
+/* Don't show tooltip on hover in single column mode */
 body.single-column-mode .timeline-event:hover .timeline-tooltip {
-  height: 0;
-  padding: 0;
-  opacity: 0;
   visibility: hidden;
+  opacity: 0;
+  max-height: 0;
   overflow: hidden;
-  border: 0;
+  pointer-events: none;
 }
 
-/* Keep tooltip visible if event is active, even when hovering */
+/* Only show tooltip on active events */
 body.single-column-mode .timeline-event.active:hover .timeline-tooltip {
-  height: auto;
-  padding: 15px;
-  opacity: 1;
   visibility: visible;
+  opacity: 1;
+  max-height: 800px;
   overflow: visible;
-  border: 1px solid var(--tooltip-border-color);
+  pointer-events: auto;
 }
 
 /* Remove tooltip arrows in single column mode */
