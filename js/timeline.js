@@ -41,6 +41,11 @@ document.addEventListener('DOMContentLoaded', function() {
       timelineEvents.forEach(event => {
         event.classList.remove('active');
       });
+      
+      // Reset all tooltip positioning when switching to single column mode
+      if (singleColumn) {
+        resetAllTooltipPositioning();
+      }
     }
   }
   
@@ -59,8 +64,13 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Function to ensure tooltips stay within viewport in desktop view
   function adjustTooltipPosition(tooltip, event) {
-    // If in single column mode, don't adjust position
-    if (isSingleColumnMode()) return;
+    // If in single column mode, reset positioning and return
+    if (isSingleColumnMode()) {
+      tooltip.style.left = '';
+      tooltip.style.right = '';
+      tooltip.style.transform = '';
+      return;
+    }
     
     // Get the position of the event relative to the viewport width
     const eventRect = event.getBoundingClientRect();
@@ -101,6 +111,17 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Toggle this event's active state
     event.classList.toggle('active', !isActive);
+    
+    // Reset tooltip positioning in single column mode
+    if (isSingleColumnMode()) {
+      const tooltip = event.querySelector('.timeline-tooltip');
+      if (tooltip) {
+        // Reset all positioning styles to default for mobile view
+        tooltip.style.left = '';
+        tooltip.style.right = '';
+        tooltip.style.transform = '';
+      }
+    }
     
     // Debug logging
     console.log("Toggled event active state:", event.classList.contains('active'));
@@ -189,4 +210,14 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
+
+  // Add an additional function to reset all tooltip positioning when switching to single column mode
+  function resetAllTooltipPositioning() {
+    const tooltips = document.querySelectorAll('.timeline-tooltip');
+    tooltips.forEach(tooltip => {
+      tooltip.style.left = '';
+      tooltip.style.right = '';
+      tooltip.style.transform = '';
+    });
+  }
 });
