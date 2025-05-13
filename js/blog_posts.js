@@ -25,3 +25,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Dynamically add the structured-data.js script
+(function() {
+  // Create script element for structured data
+  const structuredDataScript = document.createElement('script');
+  structuredDataScript.src = '../../js/structured-data.js';
+  document.body.appendChild(structuredDataScript);
+})();
