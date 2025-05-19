@@ -6,13 +6,17 @@
 
 ## License
 
-This project is released under the [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). This means:
+This project is released under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](http://creativecommons.org/licenses/by-nc-sa/4.0/). This means:
 
-- You are free to use, share, modify and distribute this work for any purpose, including commercial use
-- No attribution is required
-- All content, code, and materials in this repository may be used without restrictions
+- You are free to share and adapt this work for non-commercial purposes
+- You must give appropriate credit and provide a link to the license
+- You must distribute your contributions under the same license
+- You may not use the material for commercial purposes
+- Misrepresentation or use in contexts that minimize or trivialize sexual violence is expressly prohibited
 
-We believe these important issues should be freely accessible and shareable without limitation.
+The Gender Watchdog logo, identity, and associated materials are available for use in advocacy materials, reporting, protest actions, and educational contexts relating to sexual violence in film and academic institutions.
+
+We believe these important issues should be freely accessible for legitimate advocacy while protecting against misuse.
 
 ## How to Access This Repository
 
